@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ClubContainer.css'
 import ClubContainer from "./ClubContainer";
 
@@ -30,10 +30,10 @@ const ClubPage: React.FC<ClubPageProps> = ({
                 {loadClubParts(row2, 4)}
             </div>
         )
-    }
+    };
 
     return (
-        <div className={"col"}>
+        <div className={"col-10"}>
             <h1>{title}</h1>
             {renderedClubs()}
         </div>
