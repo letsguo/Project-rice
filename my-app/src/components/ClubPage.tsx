@@ -17,7 +17,7 @@ const ClubPage: React.FC<ClubPageProps> = ({
     const [searchQuery] = useRecoilState(searchState);
 
     const shownMessages = messages.filter(item => {
-        return item.includes(searchQuery);
+        return item.toLowerCase().includes(searchQuery.toLowerCase());
     });
 
     const loadClubParts = (messages: string[], startIdx: number) => (
