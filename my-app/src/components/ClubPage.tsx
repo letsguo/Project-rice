@@ -1,6 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './ClubContainer.css'
 import ClubContainer from "./ClubContainer";
+import {useRecoilState} from "recoil";
+import {searchState} from "../recoil/atom";
 
 
 interface ClubPageProps {
@@ -10,8 +12,13 @@ interface ClubPageProps {
 const ClubPage: React.FC<ClubPageProps> = ({
      title
 }) => {
-    const messages = ["JJ", "hello", "gabe", "and", "sabreena", "welcome"];
+    const messages = ["JJ", "hello", "gabe", "and", "sabreena", "welcome", "camas", "union", "wel"];
 
+    const [searchQuery] = useRecoilState(searchState);
+
+    const shownMessages = messages.filter(item => {
+        return item.toLowerCase().includes(searchQuery.toLowerCase());
+    });
 
     const loadClubParts = (messages: string[], startIdx: number) => (
         <div className={"row"}>
@@ -22,8 +29,8 @@ const ClubPage: React.FC<ClubPageProps> = ({
     );
 
     const renderedClubs = () => {
-        const row1 = messages.slice(0, 3);
-        const row2 = messages.slice(3);
+        const row1 = shownMessages.slice(0, 3);
+        const row2 = shownMessages.slice(3);
         return (
             <div className={"col"}>
                 {loadClubParts(row1, 1)}
