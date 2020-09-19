@@ -1,17 +1,26 @@
 [
   {
-    "name": "Cal Robobears",
-    "tags": [
+    "name": "Investment Club",
+    "High School": "Camas High School",
+    "tags": [ 
       {
-        "willing": true,
-        "years existence": 3
+        "Category_one": "Finance",
+        "Category_two": "Business"
       }
     ],
+
+    "Attributes":[
+      {
+        "Accepting New Members": true,
+        "Application": false
+      }
+    ],
+    
     "description": "d;lfkjas;dlfkjjk",
     "social media links": [
       {
-        "facebook": "www",
-        "github": "www"
+        "Instagram": "www",
+        "Website": "www"
       }
     ]
   },
