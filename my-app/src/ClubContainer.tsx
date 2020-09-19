@@ -1,9 +1,16 @@
 import React from 'react';
 import './ClubContainer.css'
 
-const ClubContainer = () => {
+
+interface ClubContainerProps {
+    message: string;
+}
+
+const ClubContainer: React.FC<ClubContainerProps> = ({
+    message
+}) => {
     return (
-        <div className={"clubContainer"}>Hi it's Sabreena</div>
+        <div className={"clubContainer"}>{message}</div>
     );
 };
 
