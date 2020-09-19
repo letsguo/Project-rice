@@ -1,2 +1,2 @@
 # Project-rice
-HackRice Project
+Yall needa fix yall githubs bruh
