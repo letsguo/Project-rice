@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Cal Robobears",
+    "tags": [
+      {
+        "willing": true,
+        "years existence": 3
+      }
+    ],
+    "description": "d;lfkjas;dlfkjjk",
+    "social media links": [
+      {
+        "facebook": "www",
+        "github": "www"
+      }
+    ]
+  },
+  {
+    "name": "AFX Dance",
+    "tags": [
+      {
+        "willing": true,
+        "years existence": 3
+      }
+    ],
+    "description": "d;lfkjas;dlfkjjk",
+    "social media links": [
+      {
+        "facebook": "www",
+        "github": "www"
+      }
+    ]
+  }
+]
