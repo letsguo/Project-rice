@@ -10,16 +10,32 @@ interface ClubPageProps {
 const ClubPage: React.FC<ClubPageProps> = ({
      title
 }) => {
-    const messages = ["hello", "gabe", "and", "sabreena", "welcome", "new one"];
+    const messages = ["JJ", "hello", "gabe", "and", "sabreena", "welcome"];
 
-    const clubs = messages.map((item, index) => (
-        <ClubContainer message={item}/>
-    ));
+
+    const loadClubParts = (messages: string[], startIdx: number) => (
+        <div className={"row"}>
+            {messages.map((item, index) => (
+                <ClubContainer key={startIdx + index} message={item}/>
+                ))}
+        </div>
+    );
+
+    const renderedClubs = () => {
+        const row1 = messages.slice(0, 3);
+        const row2 = messages.slice(3);
+        return (
+            <div className={"col"}>
+                {loadClubParts(row1, 1)}
+                {loadClubParts(row2, 4)}
+            </div>
+        )
+    }
 
     return (
-        <div>
+        <div className={"col"}>
             <h1>{title}</h1>
-            {clubs}
+            {renderedClubs()}
         </div>
     );
 };
