@@ -29,7 +29,13 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleCheck}/>
                     <label className="form-check-label" htmlFor="defaultCheck1">
-                        Open for Help!
+                        Open to Help
+                    </label>
+                </div>
+                <div className="form-check">
+                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleCheck}/>
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                        Accepting New Members
                     </label>
                 </div>
             </form>
