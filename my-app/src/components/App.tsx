@@ -19,11 +19,11 @@ function App() {
             <Router>
                 <Switch>
                     <Route path={"/club"}>
-                        <ClubDetails/>
+                        <ClubDetails name={"title"}/>
                     </Route>
                     <Route path={"/"}>
                         <FilteringContainer/>
-                        <ClubPage title={"title"}/>
+                        <ClubPage title={"ClubHub"}/>
                     </Route>
                 </Switch>
             </Router>

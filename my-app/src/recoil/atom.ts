@@ -7,7 +7,7 @@ export const searchState = atom({
 
 export const openToCollabState = atom({
     key: 'openToCollab',
-    default: true,
+    default: false,
 });
 
 export const acceptMembersState = atom({

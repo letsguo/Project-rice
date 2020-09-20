@@ -14,7 +14,7 @@ export interface ClubResponse {
     "music"?: boolean
     "medical"?: boolean
     "english"?: boolean
-    
+
 }
 
 export const clubOne: ClubResponse = {
@@ -51,7 +51,8 @@ export const clubFour: ClubResponse = {
     location: "Salem, OR",
     imagePath: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8r8eL3gzU9y_eEv6RONSb0bdHw_RAjwTfYw&usqp=CAU",
     openToCollaborate: true,
-    business: true
+    business: true,
+    engineering: true
 };
 
 export const clubFive: ClubResponse = {

@@ -27,9 +27,9 @@ const ClubContainer: React.FC<ClubContainerProps> = ({
             {firebase => {
                 return (
                     <div className={"clubContainer"} onClick={goToClubDetails}>
-                    <img className={"cardImg"} src={img} alt={name} />
-                    {name}
-                </div>
+                        <img className={"cardImg"} src={img} alt={name} />
+                        {name} - {school}
+                    </div>
             );
         }}
       </FirebaseContext.Consumer>

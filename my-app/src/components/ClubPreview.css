@@ -1,0 +1,43 @@
+.clubPreview {
+    width: 80%;
+    margin: auto;
+}
+
+.clubPreviewTitle {
+    font-size: 40px;
+    text-align: left;
+}
+
+.clubPreviewContainer {
+    margin: 20px;
+}
+
+
+.imgContainer {
+    transform: scale(0.75, 0.75);
+}
+
+.paragraphDescription {
+    text-align: left;
+}
+
+.contactUs {
+    padding-left: 36px;
+}
+
+.clubPreviewSubtitle {
+    font-size: 20px;
+    text-align: right;
+    /*padding-left: 30px*/
+}
+
+.clubTags {
+    font-size: 20px;
+    text-align: left;
+}
+
+.clubPreviewContactEmail {
+    font-size: 20px;
+    text-align: left;
+    padding-left: 43px;
+}

@@ -3,9 +3,15 @@
     width: 450px;
     height: 300px;
     background-color: #FFFF;
+    cursor: pointer;
 }
 
 .cardImg {
     width: 450px;
     height: 250px;
+}
+
+.logo {
+    /*transform: scale(0.10, 0.10);*/
+    /*overflow: hidden;*/
 }

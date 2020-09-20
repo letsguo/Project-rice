@@ -27,9 +27,9 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
 
     return (
         <div className={"col-2"}>
-            <form className="form-inline d-flex justify-content-center md-form form-sm mt-0">
+            <form className="form-inline d-flex justify-content-center md-form form-sm mt-0 search">
                 <i className="fas fa-search" aria-hidden="true" />
-                <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder={"Search by name..."}
+                <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder={"Search"}
                        aria-label="Search" onChange={handleChange}/>
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleCheck}/>
@@ -37,12 +37,12 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
                         Open to Help
                     </label>
                 </div>
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleAccept}/>
-                    <label className="form-check-label" htmlFor="defaultCheck1">
-                        Accepting New Members
-                    </label>
-                </div>
+                {/*<div className="form-check">*/}
+                {/*    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleAccept}/>*/}
+                {/*    <label className="form-check-label" htmlFor="defaultCheck1">*/}
+                {/*       Business*/}
+                {/*    </label>*/}
+                {/*</div>*/}
             </form>
         </div>
     );

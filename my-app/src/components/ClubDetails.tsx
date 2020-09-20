@@ -1,20 +1,16 @@
 import React from 'react';
-import './ClubContainer.css'
-
+import './ClubDetails.css'
+import ClubPreview from "./ClubPreview";
 
 interface ClubDetailsProps {
-    // name: string,
-    // school: string,
-    // location: string,
+    name: string,
 }
 
 const ClubDetails: React.FC<ClubDetailsProps> = ({
-     // name,
-     // school,
-     // location
+     name,
 }) => {
     return (
-        <div>ClubDetails</div>
+        <ClubPreview/>
     );
 };
 

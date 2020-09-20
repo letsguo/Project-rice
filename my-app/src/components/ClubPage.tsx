@@ -21,8 +21,7 @@ const ClubPage: React.FC<ClubPageProps> = ({
 
     const showClubs = clubResponses.filter(item => {
         return item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            (isOpenToCollab == item.openToCollaborate) &&
-            (isAcceptMember == item.applicationNeeded);
+            (isOpenToCollab == item.openToCollaborate || isAcceptMember == item.business)
     });
 
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
@@ -54,8 +53,12 @@ const ClubPage: React.FC<ClubPageProps> = ({
         )
     };
 
+    // <a href="https://imgbb.com/"><img src="https://i.ibb.co/ySM6bWc/Screen-Shot-2020-09-20-at-2-20-46-AM.png" alt="Screen-Shot-2020-09-20-at-2-20-46-AM" border="0" /></a>
+    const logo = "https://i.ibb.co/ySM6bWc/Screen-Shot-2020-09-20-at-2-20-46-AM.png";
+
     return (
         <div className={"col-10"}>
+            <img className={"logo"} src={logo} alt={"logo"} />
             <h1>{title}</h1>
             {renderedClubs()}
         </div>
