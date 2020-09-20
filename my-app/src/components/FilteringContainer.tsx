@@ -1,7 +1,7 @@
 import React from 'react';
 import './ClubContainer.css'
 import {useRecoilState} from "recoil";
-import {openToCollabState, searchState} from "../recoil/atom";
+import {acceptMembersState, openToCollabState, searchState} from "../recoil/atom";
 
 interface FilteringContainerProps {
 }
@@ -10,7 +10,8 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
 }) => {
 
     const [searchQuery, setSearchQuery] = useRecoilState(searchState);
-    const [openToCollab, setOpenToCollab] = useRecoilState(openToCollabState)
+    const [openToCollab, setOpenToCollab] = useRecoilState(openToCollabState);
+    const [acceptMembers, setAcceptMembers] = useRecoilState(acceptMembersState);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setSearchQuery(event.currentTarget.value);
@@ -18,6 +19,10 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
 
     const handleCheck = (event: React.ChangeEvent<HTMLInputElement>): void => {
        setOpenToCollab(event.target.checked);
+    };
+
+    const handleAccept = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        setAcceptMembers(event.target.checked);
     };
 
     return (
@@ -29,7 +34,13 @@ const FilteringContainer: React.FC<FilteringContainerProps> = ({
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleCheck}/>
                     <label className="form-check-label" htmlFor="defaultCheck1">
-                        Open for Help!
+                        Open to Help
+                    </label>
+                </div>
+                <div className="form-check">
+                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" onChange={handleAccept}/>
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                        Accepting New Members
                     </label>
                 </div>
             </form>

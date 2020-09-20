@@ -2,8 +2,8 @@ import React from 'react';
 import './ClubContainer.css'
 import ClubContainer from "./ClubContainer";
 import {useRecoilState} from "recoil";
-import {openToCollabState, searchState} from "../recoil/atom";
-import {clubOne, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen, clubEleven, ClubResponse} from "../Data";
+import {acceptMembersState, openToCollabState, searchState} from "../recoil/atom";
+import {clubOne, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen, clubEleven, clubTwelve, clubThirteen, clubFourteen, clubFifteen, ClubResponse} from "../Data";
 
 
 interface ClubPageProps {
@@ -13,15 +13,16 @@ interface ClubPageProps {
 const ClubPage: React.FC<ClubPageProps> = ({
      title
 }) => {
-    const clubResponses: ClubResponse[] = [clubOne, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen, clubEleven];
+    const clubResponses: ClubResponse[] = [clubOne, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen, clubEleven, clubTwelve, clubThirteen, clubFourteen, clubFifteen];
 
     const [searchQuery] = useRecoilState(searchState);
     const [isOpenToCollab] = useRecoilState(openToCollabState);
+    const [isAcceptMember] = useRecoilState(acceptMembersState);
 
     const showClubs = clubResponses.filter(item => {
-        // console.log(item.name + " " + isOpenToCollab + " " + item.openToCollaborate);
         return item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            (isOpenToCollab == item.openToCollaborate)
+            (isOpenToCollab == item.openToCollaborate) &&
+            (isAcceptMember == item.applicationNeeded);
     });
 
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
@@ -42,11 +43,13 @@ const ClubPage: React.FC<ClubPageProps> = ({
         const row1 = showClubs.slice(0, 3);
         const row2 = showClubs.slice(3, 6);
         const row3 = showClubs.slice(6, 9);
+        const row4 = showClubs.slice(9, 12);
         return (
             <div className={"col"}>
                 {loadClubParts(row1, 1)}
                 {loadClubParts(row2, 4)}
                 {loadClubParts(row3, 7)}
+                {loadClubParts(row4, 10)}
             </div>
         )
     };
