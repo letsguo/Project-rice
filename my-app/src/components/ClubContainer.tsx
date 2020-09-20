@@ -1,6 +1,7 @@
 import React from 'react';
 import './ClubContainer.css'
 import  { FirebaseContext } from './Firebase';
+import {useHistory} from "react-router-dom";
 
 interface ClubContainerProps {
     name: string,
@@ -15,11 +16,17 @@ const ClubContainer: React.FC<ClubContainerProps> = ({
     location,
     img,
 }) => {
+
+    const history = useHistory();
+    const goToClubDetails = () => {
+        history.push("/club")
+    };
+
     return (
         <FirebaseContext.Consumer>
-        {firebase => {
-            return (
-                <div className={"clubContainer"}>
+            {firebase => {
+                return (
+                    <div className={"clubContainer"} onClick={goToClubDetails}>
                     <img className={"cardImg"} src={img} alt={name} />
                     {name}
                 </div>
