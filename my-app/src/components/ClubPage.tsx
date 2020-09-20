@@ -2,7 +2,7 @@ import React from 'react';
 import './ClubContainer.css'
 import ClubContainer from "./ClubContainer";
 import {useRecoilState} from "recoil";
-import {openToCollabState, searchState} from "../recoil/atom";
+import {acceptMembersState, openToCollabState, searchState} from "../recoil/atom";
 import {clubOne, clubTwo, clubThree, clubFour, clubFive, clubSix, clubSeven, clubEight, clubNine, clubTen, clubEleven, clubTwelve, clubThirteen, clubFourteen, clubFifteen, ClubResponse} from "../Data";
 
 
@@ -17,11 +17,12 @@ const ClubPage: React.FC<ClubPageProps> = ({
 
     const [searchQuery] = useRecoilState(searchState);
     const [isOpenToCollab] = useRecoilState(openToCollabState);
+    const [isAcceptMember] = useRecoilState(acceptMembersState);
 
     const showClubs = clubResponses.filter(item => {
-        // console.log(item.name + " " + isOpenToCollab + " " + item.openToCollaborate);
         return item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            (isOpenToCollab == item.openToCollaborate)
+            (isOpenToCollab == item.openToCollaborate) &&
+            (isAcceptMember == item.applicationNeeded);
     });
 
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
