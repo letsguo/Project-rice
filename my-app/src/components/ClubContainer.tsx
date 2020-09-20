@@ -1,6 +1,6 @@
 import React from 'react';
 import './ClubContainer.css'
-
+import  { FirebaseContext } from './Firebase';
 
 interface ClubContainerProps {
     name: string,
@@ -14,7 +14,11 @@ const ClubContainer: React.FC<ClubContainerProps> = ({
     location
 }) => {
     return (
-        <div className={"clubContainer"}>{name} {school} {location}</div>
+        <FirebaseContext.Consumer>
+        {firebase => {
+            return <div className={"clubContainer"}>{name} {school} {location} </div>
+        }}
+      </FirebaseContext.Consumer>
     );
 };
 
