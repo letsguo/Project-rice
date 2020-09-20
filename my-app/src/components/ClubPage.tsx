@@ -2,76 +2,25 @@ import React from 'react';
 import './ClubContainer.css'
 import ClubContainer from "./ClubContainer";
 import {useRecoilState} from "recoil";
-import {searchState} from "../recoil/atom";
+import {openToCollabState, searchState} from "../recoil/atom";
+import {clubOne, clubTwo, clubThree, ClubResponse} from "../Data";
 
 
 interface ClubPageProps {
     title: string;
 }
 
-interface ClubResponse {
-    "name": string
-    "school": string
-    "location": string
-    "tags": any[]
-    "imagePath": string
-}
-
-const clubOne: ClubResponse = {
-    name: "Investment Club",
-    school: "Camas High School",
-    location: "Camas, WA",
-    tags: [
-        {
-            "Application Needed": false
-        },
-        {
-            "Open to collab": true
-        }
-    ],
-    imagePath: "./img/true.png"
-};
-
-const clubTwo: ClubResponse = {
-    name: "Robotics Club",
-    school: "Union High School",
-    location: "Camas, WA",
-    tags: [
-        {
-            "Application Needed": true
-        }
-    ],
-    imagePath: "./img/true.png"
-};
-
-const clubThree: ClubResponse = {
-    name: "Key Club",
-    school: "Camas High School",
-    location: "Camas, WA",
-    tags: [
-        {
-            "Application Needed": true
-        }
-    ],
-    imagePath: "./img/true.png"
-};
-const clubResponses: ClubResponse[] = [clubOne, clubTwo, clubThree] ;
-
 const ClubPage: React.FC<ClubPageProps> = ({
      title
 }) => {
-    const messages = ["Investment Club", "hello", "gabe", "and", "sabreena", "welcome", "camas", "union", "wel"];
-
-    const firebaseObjs = [clubOne, clubOne, clubOne, clubOne, clubOne, clubOne, clubOne, clubOne, clubOne];
+    const clubResponses: ClubResponse[] = [clubOne, clubTwo, clubThree];
 
     const [searchQuery] = useRecoilState(searchState);
-
-    // const shownMessages = messages.filter(item => {
-    //     return item.toLowerCase().includes(searchQuery.toLowerCase());
-    // });
+    const [isOpenToCollab] = useRecoilState(openToCollabState);
 
     const showClubs = clubResponses.filter(item => {
-        return item.name.toLowerCase().includes(searchQuery.toLowerCase());
+        return item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+            isOpenToCollab && item.tags[0]["Application Needed"]
     });
 
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
