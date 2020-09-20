@@ -1,3 +1,5 @@
+import { BooleanLiteral } from "typescript";
+
 export interface ClubResponse {
     "name": string
     "school": string
@@ -5,6 +7,14 @@ export interface ClubResponse {
     "openToCollaborate"?: boolean
     "applicationNeeded"?: boolean
     "imagePath": string
+    "finance"?: boolean
+    "business"?: boolean
+    "engineering"?: boolean
+    "social_good"?: boolean
+    "music"?: boolean
+    "medical"?: boolean
+    "english"?: boolean
+    
 }
 
 export const clubOne: ClubResponse = {
@@ -12,7 +22,9 @@ export const clubOne: ClubResponse = {
     school: "Camas High School",
     location: "Camas, WA",
     imagePath: "./img/true.png",
-    openToCollaborate: false
+    openToCollaborate: false,
+    finance: true,
+    business: true
 };
 
 export const clubTwo: ClubResponse = {
@@ -20,7 +32,8 @@ export const clubTwo: ClubResponse = {
     school: "Union High School",
     location: "Camas, WA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    engineering: true
 };
 
 export const clubThree: ClubResponse = {
@@ -28,7 +41,8 @@ export const clubThree: ClubResponse = {
     school: "Camas High School",
     location: "Camas, WA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    social_good: true
 };
 
 export const clubFour: ClubResponse = {
@@ -36,7 +50,8 @@ export const clubFour: ClubResponse = {
     school: "South Salem High School",
     location: "Salem, OR",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    business: true
 };
 
 export const clubFive: ClubResponse = {
@@ -44,7 +59,8 @@ export const clubFive: ClubResponse = {
     school: "North Salem High School",
     location: "Salem, MA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    business: true
 };
 
 export const clubSix: ClubResponse = {
@@ -52,7 +68,8 @@ export const clubSix: ClubResponse = {
     school: "California High School",
     location: "San Ramon, CA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    music: true
 };
 
 export const clubSeven: ClubResponse = {
@@ -60,7 +77,8 @@ export const clubSeven: ClubResponse = {
     school: "West Salem High School",
     location: "West Salem, WI",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    medical: true
 };
 
 export const clubEight: ClubResponse = {
@@ -68,7 +86,8 @@ export const clubEight: ClubResponse = {
     school: "Torrence High School",
     location: "San Diego, CA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    engineering: true
 };
 
 export const clubNine: ClubResponse = {
@@ -76,7 +95,9 @@ export const clubNine: ClubResponse = {
     school: "Norwell High School",
     location: "Norwell, MA",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    finance: true,
+    business: true
 };
 
 export const clubTen: ClubResponse = {
@@ -84,7 +105,8 @@ export const clubTen: ClubResponse = {
     school: "Blanchet Catholic School",
     location: "Salem,OR",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    english: true
 };
 
 export const clubEleven: ClubResponse = {
@@ -92,6 +114,7 @@ export const clubEleven: ClubResponse = {
     school: "Salem Academy Christian Schools",
     location: "Salem,OR",
     imagePath: "./img/true.png",
-    openToCollaborate: true
+    openToCollaborate: true,
+    english: true
 };
 
