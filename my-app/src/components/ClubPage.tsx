@@ -19,8 +19,9 @@ const ClubPage: React.FC<ClubPageProps> = ({
     const [isOpenToCollab] = useRecoilState(openToCollabState);
 
     const showClubs = clubResponses.filter(item => {
+        // console.log(item.name + " " + isOpenToCollab + " " + item.openToCollaborate);
         return item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            isOpenToCollab && item.openToCollaborate
+            (isOpenToCollab == item.openToCollaborate)
     });
 
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
