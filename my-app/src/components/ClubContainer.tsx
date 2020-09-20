@@ -6,17 +6,24 @@ interface ClubContainerProps {
     name: string,
     school: string,
     location: string,
+    img: string,
 }
 
 const ClubContainer: React.FC<ClubContainerProps> = ({
     name,
     school,
-    location
+    location,
+    img,
 }) => {
     return (
         <FirebaseContext.Consumer>
         {firebase => {
-            return <div className={"clubContainer"}>{name} {school} {location} </div>
+            return (
+                <div className={"clubContainer"}>
+                    <img className={"cardImg"} src={img} alt={name} />
+                    {name}
+                </div>
+            );
         }}
       </FirebaseContext.Consumer>
     );

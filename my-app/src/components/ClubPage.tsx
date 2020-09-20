@@ -26,7 +26,13 @@ const ClubPage: React.FC<ClubPageProps> = ({
     const loadClubParts = (messages: ClubResponse[], startIdx: number) => (
         <div className={"row"}>
             {messages.map((item, index) => (
-                <ClubContainer key={startIdx + index} name={item.name} location={item.location} school={item.school}/>
+                <ClubContainer
+                    key={startIdx + index}
+                    name={item.name}
+                    location={item.location}
+                    school={item.school}
+                    img={item.imagePath}
+                />
                 ))}
         </div>
     );
