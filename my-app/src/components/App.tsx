@@ -6,11 +6,10 @@ import FilteringContainer from "./FilteringContainer";
 import {RecoilRoot} from "recoil";
 
 function App() {
-    const test = "Search";
   return (
     <div className="App row">
         <RecoilRoot>
-            <FilteringContainer message={test}/>
+            <FilteringContainer />
             <ClubPage title={"Welcome to Clubby"}/>
         </RecoilRoot>
     </div>

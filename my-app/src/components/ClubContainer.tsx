@@ -3,14 +3,18 @@ import './ClubContainer.css'
 
 
 interface ClubContainerProps {
-    message: string;
+    name: string,
+    school: string,
+    location: string,
 }
 
 const ClubContainer: React.FC<ClubContainerProps> = ({
-    message
+    name,
+    school,
+    location
 }) => {
     return (
-        <div className={"clubContainer"}>{message}</div>
+        <div className={"clubContainer"}>{name} {school} {location}</div>
     );
 };
 
